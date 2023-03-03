@@ -66,9 +66,9 @@ addFormDom.addEventListener("submit", (e) => {
 
     axios
         .post("https://wdmc.onrender.com/about/", {
-            heading: heading,
-            content:content,
-            sourceOfInfo: sourceOfInfo
+            heading: heading||"",
+            content:content||"",
+            sourceOfInfo: sourceOfInfo,
             
         })
         .then((response) => {
@@ -105,8 +105,8 @@ editFormDom.addEventListener("submit", (e) => {
 
     axios
         .patch(`https://wdmc.onrender.com/about/${id}`, {
-            heading: heading,
-            content:content,
+            heading: heading || " ",
+            content:content || " ",
             sourceOfInfo: sourceOfInfo,
         })
         .then((response) => {
